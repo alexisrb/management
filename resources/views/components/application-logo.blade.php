@@ -1,0 +1,1 @@
+<h1>Sistema de <span class="font-extrabold">Gestion</span></h1>
