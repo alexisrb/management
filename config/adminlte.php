@@ -446,13 +446,13 @@ return [
                 ],
                 [
                     'text' => 'Centros de Costos',
-                    'url'  => '#',
-                    'icon'  => 'fa fa-folder-open'
+                    'route'  => 'admin.cost-centers.index',
+                    'icon'  => 'fa fa-signal',
                 ],
                 [
                     'text' => 'Auto Estimación',
                     'url'  => '#',
-                    'icon'  => 'fa fa-folder-open'
+                    'icon'  => 'fa fa-folder-open',
                 ],
                 
                 [
