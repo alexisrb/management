@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('licitaciones', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('employ_number');
+            $table->data('register_date')->nullable();
+            $table->string('name_liciacion');
+
+            $table->unsignedBigInteger('document_id')->nullable();
+            $table->foreign('document_id')->references('id')->on('licitacion_documents')->onDelete('cascade')->onUpdate('cascade');
+
+
             $table->timestamps();
         });
     }
