@@ -1,7 +1,7 @@
 <div class="pt-4">
     <div class="card">
         <div class="card-header bg-info">
-        <h5 class="text-center my-2">Todas las Cargas de Estimaciones</h5>
+        <h5 class="text-center my-2">Todos los Controles de Obra</h5>
         </div>
         <div class="card-header">
             <div class="row">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                    <a type="button" class="btn btn-success" href="{{ route('admin.estimates.create', $user) }}">Crear</a>
+                    <a type="button" class="btn btn-success" href="{{ route('admin.control-obra.create', $user) }}">Crear</a>
                 </div>
             </div>
         </div>
@@ -37,11 +37,10 @@
                         <th>#</th>
                         <th>Nombre de la obra / Proyecto</th>
                         <th>Porcentaje de avances</th>
-                        <th>Estimaciones</th>
+                        
                         <th>Estatus</th>
-                        <th>Facturas Generadas</th>
-                        <th>Facturas Cobradas</th>
-                        <th>Porcentaje de Cobranza</th>    
+                        
+                        <th>Porcentaje</th>    
                         @can('')
                             <th></th>
                         @endcan

@@ -3,7 +3,9 @@
 use App\Http\Controllers\Admin\Accounting\AccountingController;
 use App\Http\Controllers\Admin\Advances\AdvancesController;
 use App\Http\Controllers\Admin\Clients\ClientController;
+use App\Http\Controllers\Admin\ConstCenter\ConstCenterController;
 use App\Http\Controllers\Admin\ConstructionSite\ConstructionSiteController;
+use App\Http\Controllers\Admin\ControlObra\ControlObraController;
 use App\Http\Controllers\Admin\Disbursements\DisbursementsController;
 use App\Http\Controllers\Admin\Estimates\EstimateController;
 use App\Http\Controllers\Admin\Facturascobradas\FacturacobradaController;
@@ -56,3 +58,12 @@ Route::resource('facturasxc', FacturaxcController::class)->only(['index', 'creat
 
 //Facturas Pagadas
 Route::resource('facturascobradas', FacturacobradaController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.facturas-cobradas');
+
+//Control de Obra
+Route::resource('controlobra', ControlObraController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.control-obra');
+
+//Centro de Costos
+Route::resource('constcenters', ConstCenterController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.cost-centers');
+
+//Centro de Costos
+Route::resource('constcenters', ConstCenterController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.cost-centers');

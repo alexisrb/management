@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Clients;
 
+use App\Models\User;
 use Livewire\Component;
 
 class ClientsCreate extends Component
@@ -30,7 +31,24 @@ class ClientsCreate extends Component
             $array['password'] = 'required|confirmed';
         }
         return $array;
+
     }
+
+    protected $messages = [
+        'name.*.required' => 'el nombre es obligatorio'
+    ];
+
+    public function save(){
+
+        $this->validate();
+
+        $user = User::create([
+            'name' => $this->name,
+            'email' => $this->email,
+        ]);
+
+    }
+
     public function render()
     {
         return view('livewire.admin.clients.clients-create');

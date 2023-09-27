@@ -40,26 +40,7 @@
                                 <input type="text" id="número_de_empleado" class="form-control" wire:model="número_de_empleado" placeholder="Ingrese su numero de empleado">
                                 @error('número_de_empleado') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
-                            
-                            <div class="form-group col-12 col-md-6">
-                                <label class="col-form-label">
-                                    {{ __('Domicilio') }}
-                                    <span class="text-danger">*</span>
-                                </label>
-                                <input type="text" id="domicilio" class="form-control" wire:model="domicilio" placeholder="Ingrese el domicilio">
-                                @error('domicilio') <span class="text-danger error">{{ $message }}</span>@enderror
-                            </div>
-                            <div class="form-group col-12">
-                                <label class="col-form-label">
-                                    {{ __('Obra') }}
-                                    <span class="text-danger">*</span>
-                                </label>
-                                <input type="text" id="obra" class="form-control" wire:model="obra" placeholder="Ingrese el nombre de la obra">
-                                @error('obra') <span class="text-danger error">{{ $message }}</span>@enderror
-                            </div>
-                            
-                            
-                            
+                    
                             {{--<div class="form-group col-12">
                                 <label class="col-form-label">
                                     {{ __('Whatsapp') }}
@@ -95,14 +76,7 @@
                                 <input type="text" id="número_de_inscripción_al_imss" class="form-control" wire:model="número_de_inscripción_al_imss" placeholder="Ingrese el número de inscripción al IMSS">
                                 @error('número_de_inscripción_al_imss') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
-                            <div class="form-group col-12 col-md-6">
-                                <label class="col-form-label">
-                                    {{ __('RFC') }}
-                                    <span class="text-danger">*</span>
-                                </label>
-                                <input type="text" id="rfc" class="form-control" wire:model="rfc" placeholder="Ingrese el RFC" oninput="this.value = this.value.toUpperCase()">
-                                @error('rfc') <span class="text-danger error">{{ $message }}</span>@enderror
-                            </div>
+                            
                             <div class="form-group col-12">
                                 <label class="col-form-label">
                                     {{ __('Número del infonavit') }}
@@ -115,14 +89,14 @@
                 </div>
                 {{--Resumen de Estimacion --}}
                 <div class="row rounded border mb-4">
-                    <div class="bg-yellow rounded-left">
+                    <div class="bg-lime rounded-left">
                         <div class="m-3">
-                            <div class="my-auto"><i class="fa fa-user-plus"></i></div>
+                            <div class="my-auto"><i class="fa fa-tag"></i></div>
                         </div>
                     </div>
                     <div class="col m-2">
                         <div class="border-bottom">
-                            <h5 class="py-1 text-center">Resumen de Estimaciones</h5>
+                            <h5 class="py-1 text-center">Resumen del Control de Obra</h5>
                         </div>
                         <div class="row">
                             <div class="form-group col-12 col-md-6">
@@ -132,6 +106,14 @@
                                 </label>
                                 <input type="text" id="número_de_estimación" class="form-control" wire:model="número_de_estimación" placeholder="Ingrese su numero de empleado">
                                 @error('número_de_estimación') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12">
+                                <label class="col-form-label">
+                                    {{ __('Obra') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="obra" class="form-control" wire:model="obra" placeholder="Ingrese el nombre de la obra">
+                                @error('obra') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label class="col-form-label">
@@ -155,30 +137,63 @@
                                 <input type="date" id="fecha_de_registro" class="form-control" wire:model="fecha_de_registro" placeholder="Ingrese el periodo">
                                 @error('fecha_de_registro') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label class="col-form-label">
+                                    {{ __('RFC') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="rfc" class="form-control" wire:model="rfc" placeholder="Ingrese el RFC" oninput="this.value = this.value.toUpperCase()">
+                                @error('rfc') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            
+                            <div class="form-group col-12 col-md-6">
+                                <label class="col-form-label">
+                                    {{ __('IMPORTE DE LA ESTIMACIÓN') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="importe_estimacion" class="form-control" wire:model="importe_estimacion" placeholder="Ingrese el importe de estimacion">
+                                @error('importe_estimacion') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
                             <div class="form-group col-12 ">
                                 <label class="col-form-label">
-                                    {{ __('Tipo de Fondos') }}
+                                    {{ __('SUBTOTAL') }}
                                     <span class="text-danger">*</span>
                                 </label>
-                                <input type="text" id="tipo_fondos" class="form-control" wire:model="tipo_fondos" placeholder="Ingrese el tipo de fondo">
-                                @error('tipo_fondos') <span class="text-danger error">{{ $message }}</span>@enderror
+                                <input type="text" id="subtotal" class="form-control" wire:model="subtotal" placeholder="Ingrese el subtotal ">
+                                @error('subtotal') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
-                            <div class="form-group col-12">
+                            <div class="form-group col-12 col-md-6">
                                 <label class="col-form-label">
-                                    {{ __('Clave Presupuestal') }}
+                                    {{ __('AMORTIZACIÓN DEL ANTICIPO') }}
                                     <span class="text-danger">*</span>
                                 </label>
-                                <input type="text" id="cve_resupuestal" class="form-control" wire:model="cve_resupuestal" placeholder="Ingrese la clave Presupuestal">
-                                @error('cve_resupuestal') <span class="text-danger error">{{ $message }}</span>@enderror
+                                <input type="text" id="amortizacion_anticipo" class="form-control" wire:model="amortizacion_anticipo" placeholder="Ingrese el anticipo">
+                                @error('amortizacion_anticipo') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12 ">
+                                <label class="col-form-label">
+                                    {{ __('Inspección y vigilancia para la SFP') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="total_monto" class="form-control" wire:model="total_monto" placeholder="Ingrese su total del monto">
+                                @error('total_monto') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12 ">
+                                <label class="col-form-label">
+                                    {{ __('Total del Monto') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="total_monto" class="form-control" wire:model="total_monto" placeholder="Ingrese su total del monto">
+                                @error('total_monto') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
                         </div>
                     </div>
                 </div>
                 {{--Documentos--}}
                 <div class="row rounded border mb-4">
-                    <div class="bg-orange rounded-left">
+                    <div class="bg-green rounded-left">
                         <div class="m-3">
-                            <div class="my-auto"><i class="fa fa-file"></i></div>
+                            <div class="my-auto"><i class="fa fa-upload"></i></div>
                         </div>
                     </div>
                     <div class="col m-2">
