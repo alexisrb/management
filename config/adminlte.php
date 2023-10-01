@@ -318,7 +318,7 @@ return [
         [
             'text' => 'Obra / Proyectos',
             'route'  => 'admin.obra.index',
-            'icon' => 'fas fa-fw fa-warehouse',
+            
             'submenu' => [
                 [
                     'text' => 'Obra / Proyectos',
@@ -327,8 +327,8 @@ return [
                 ],
                 [
                     'text' => 'Detalles de la Obra',
-                    'route'  => 'admin.licitaciones.index',
-                    'icon' => 'fa fa-upload',
+                    'route'  => 'admin.details-obra.index',
+                    'icon' => 'fa fa-info-circle',
                 ],
             ],
         ],  
@@ -395,13 +395,14 @@ return [
                     'route'        => 'admin.accounting.index',
                 ],
                 [
-                    'text' => 'Facturas Generadas',
-                    'url'  => '#',
-                ],
-                [
                     'text' => 'Facturas por Generar',
                     'url'  => '#',
                 ],
+                [
+                    'text' => 'Facturas Generadas',
+                    'route'  => 'admin.facturas-generadas.index',
+                ],
+                
                 [
                     'text' => 'Facturas Cobradas',
                     'url'  => '#',
@@ -434,7 +435,7 @@ return [
                     'url'  => '#',
                     'submenu' => [
                         [
-                            'text' => 'Caratula de Control de Obra',
+                            'text' => 'Generar Caratula CO',
                             'route'  => 'admin.control-obra.index',
                             'icon' => 'fa fa-link',
                         ],

@@ -150,114 +150,6 @@
                         </div>
                     </div>
                     
-                    {{--Documentos--}}
-                    <!--<div class="row rounded border mb-4">
-                        <div class="bg-gray rounded-left">
-                            <div class="m-3">
-                                <div class="my-auto"><i class="fa-solid fa-folder"></i></div>
-                            </div>
-                        </div>
-                        <div class="col m-2">
-                            <div class="border-bottom">
-                                <h5 class="py-1 text-center">Documentos</h5>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Identificación oficial / INE') }}
-                                        {{-- <span class="text-danger">*</span> --}}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_de_identificación_oficial" wire:model.defer="documento_de_identificación_oficial">
-                                    @error('documento_de_identificación_oficial') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Comprobante de domicilio') }}
-                                        {{-- <span class="text-danger">*</span> --}}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_del_comprobante_de_domicilio" wire:model.defer="documento_del_comprobante_de_domicilio">
-                                    @error('documento_del_comprobante_de_domicilio') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('No atecendentes penales') }}
-                                        {{-- <span class="text-danger">*</span> --}}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_de_no_antecedentes_penales" wire:model.defer="documento_de_no_antecedentes_penales">
-                                    @error('documento_de_no_antecedentes_penales') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Licencia de conducir') }}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_de_la_licencia_de_conducir" wire:model.defer="documento_de_la_licencia_de_conducir">
-                                    @error('documento_de_la_licencia_de_conducir') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Cedula profesional') }}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_de_la_cedula_profesional" wire:model.defer="documento_de_la_cedula_profesional">
-                                    @error('documento_de_la_cedula_profesional') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Carta de pasante') }}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_de_la_carta_de_pasante" wire:model.defer="documento_de_la_carta_de_pasante">
-                                    @error('documento_de_la_carta_de_pasante') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Curriculum Vitae (CV)') }}
-                                        {{-- <span class="text-danger">*</span> --}}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_del_curriculum_vitae" wire:model.defer="documento_del_curriculum_vitae">
-                                    @error('documento_del_curriculum_vitae') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Contrato firmado') }}
-                                        {{-- <span class="text-danger">*</span> --}}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_del_contrato" wire:model.defer="documento_del_contrato">
-                                    @error('documento_del_contrato') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Caratula Bancaria') }}
-                                        {{-- <span class="text-danger">*</span> --}}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_de_caratula_bancaria" wire:model.defer="documento_de_caratula_bancaria">
-                                    @error('documento_de_caratula_bancaria') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Cedula Fiscal') }}
-                                        {{-- <span class="text-danger">*</span> --}}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_de_cedula_fiscal" wire:model.defer="documento_de_cedula_fiscal">
-                                    @error('documento_de_cedula_fiscal') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Curp') }}
-                                        {{-- <span class="text-danger">*</span> --}}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_del_curp" wire:model.defer="documento_del_curp">
-                                    @error('documento_del_curp') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                                <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                    <label class="col-form-label">
-                                        {{ __('Requisicion Firmada') }}
-                                        {{-- <span class="text-danger">*</span> --}}
-                                    </label>
-                                    <input type="file" class="form-control-file" id="documento_del_requisicion_firmada" wire:model.defer="documento_del_requisicion_firmada">
-                                    @error('documento_del_requisicion_firmada') <span class="text-danger error">{{ $message }}</span>@enderror
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
                     {{--Rol--}}
                    
                         <div class="row rounded border mb-4">
@@ -276,9 +168,11 @@
                                             {{ __('Rol') }}
                                             <span class="text-danger">*</span>
                                         </label>
-                                        <select class="form-control" aria-label="Default select example" wire:model="role">
+                                        <select class="form-control" id="role" wire:model="role">
                                             <option value="">Selecciona una opción</option>
-                                            
+                                            <option value="administracion">Administracion</option>
+                                            <option value="jefe_Obra">Jefe de Obra</option>
+                                            <option value="jefe_estimaciones">Jefe de Estimaciones</option>
                                         </select>
                                         @error('role') <span class="text-danger error">{{ $message }}</span>@enderror
                                     </div>

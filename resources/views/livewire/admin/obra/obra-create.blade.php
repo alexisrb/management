@@ -30,14 +30,42 @@
                                     <label class="col-form-label">
                                         {{ __('Gerente de Obra') }}
                                     </label>
-                                    <select class="form-control" id="users" wire:model="encargado">
+                                    <select class="form-control" id="users" wire:model="gerente_obra">
                                         <option value="">Selecciona una opción</option>
                                         {{--@foreach($users as $encargado)
                                             <option value="{{ $encargado->id}}">{{ $encargado->name }}</option>
                                         @endforeach--}}
                                     </select>
                                 </div>
-                                @error('encargado') <span class="text-danger error">{{ $message }}</span>@enderror
+                                @error('gerente_obra') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12">
+                                <div wire:ignore>
+                                    <label class="col-form-label">
+                                        {{ __('Jefe de Obra') }}
+                                    </label>
+                                    <select class="form-control" id="users" wire:model="jfe_obra">
+                                        <option value="">Selecciona una opción</option>
+                                        {{--@foreach($users as $encargado)
+                                            <option value="{{ $encargado->id}}">{{ $encargado->name }}</option>
+                                        @endforeach--}}
+                                    </select>
+                                </div>
+                                @error('jfe_obra') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12">
+                                <div wire:ignore>
+                                    <label class="col-form-label">
+                                        {{ __('Jefe de Estimaciones') }}
+                                    </label>
+                                    <select class="form-control" id="users" wire:model="jefe_estimaciones">
+                                        <option value="">Selecciona una opción</option>
+                                        {{--@foreach($users as $encargado)
+                                            <option value="{{ $encargado->id}}">{{ $encargado->name }}</option>
+                                        @endforeach--}}
+                                    </select>
+                                </div>
+                                @error('jefe_estimaciones') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
                             <div class="form-group col-12">
                                 <label class="col-form-label">
@@ -106,7 +134,7 @@
                                 </label>
                                 <select class="form-control" id="cobranza" wire:model="cobranza">
                                     <option value="">Selecciona una opción</option>
-                                    <option value="Semanal">8 de cada mes</option>
+                                    
                                     <option value="Quincenal">15 de cada mes</option>
                                     <option value="Mensual">30 de cada mes</option>
                                 </select>
@@ -120,7 +148,7 @@
                                     </label>
                                     <select class="form-control" id="estimaciones" wire:model="estimaciones">
                                         <option value="">Selecciona una opción</option>
-                                        <option value="Semanal">8 de cada mes</option>
+                                        
                                         <option value="Quincenal">15 de cada mes</option>
                                         <option value="Mensual">30 de cada mes</option>
                                     </select>
@@ -136,7 +164,7 @@
                                     </label>
                                     <select class="form-control" id="facturacion" wire:model="facturacion">
                                         <option value="">Selecciona una opción</option>
-                                        <option value="Semanal">8 de cada mes</option>
+                                        
                                         <option value="Quincenal">15 de cada mes</option>
                                         <option value="Mensual">30 de cada mes</option>
                                     </select>
@@ -175,7 +203,7 @@
                             </div>
                             <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
                                 <label class="col-form-label">
-                                    {{ __('Adjuntar Facturas') }}
+                                    {{ __('Adjuntar Caratula') }}
                                     {{-- <span class="text-danger">*</span> --}}
                                 </label>
                                 <input type="file" class="form-control-file" id="documento_de_factura" wire:model.defer="documento_de_factura">

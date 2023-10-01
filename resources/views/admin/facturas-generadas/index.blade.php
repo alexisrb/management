@@ -4,7 +4,7 @@
 @section('title', 'Sistema GECO')
 
 @section('content')
-    @livewire('admin.const-centers.const-centers-create')
+    @livewire('admin.facturas-generadas.facturas-generadas-index')
 @stop
 
 

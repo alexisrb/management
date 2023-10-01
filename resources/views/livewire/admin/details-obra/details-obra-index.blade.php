@@ -1,7 +1,7 @@
 <div class="pt-4">
     <div class="card">
         <div class="card-header bg-info">
-        <h5 class="text-center my-2">Todas las Cargas de Estimaciones</h5>
+        <h5 class="text-center my-2">Detalles de la Obra</h5>
         </div>
         <div class="card-header">
             <div class="row">
@@ -21,9 +21,9 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                    <a type="button" class="btn btn-success" href="{{ route('admin.estimates.create', $user) }}">Crear</a>
-                </div>
+                {{--<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+                    <a type="button" class="btn btn-success" href="{{ route('admin.obra.create', $user) }}">Crear</a>
+                </div>--}}
             </div>
         </div>
 
@@ -38,8 +38,10 @@
                         <th>Nombre de la obra / Proyecto</th>
                         <th>Porcentaje de avances</th>
                         <th>Estimaciones</th>
-                        <th>Estatus</th>
-                        <th>Aprovacion</th>
+                        <th>Facturas Generadas</th>
+                        <th>Facturas Cobradas</th>
+                        <th>Porcentaje de Cobranza</th>  
+                        <th>Add</th>  
                         @can('')
                             <th></th>
                         @endcan

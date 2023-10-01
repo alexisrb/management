@@ -6,9 +6,12 @@ use App\Http\Controllers\Admin\Clients\ClientController;
 use App\Http\Controllers\Admin\ConstCenter\ConstCenterController;
 use App\Http\Controllers\Admin\ConstructionSite\ConstructionSiteController;
 use App\Http\Controllers\Admin\ControlObra\ControlObraController;
+use App\Http\Controllers\Admin\DetailsObra\DetailObraController;
+use App\Http\Controllers\Admin\DetailsObra\DetailsObraController;
 use App\Http\Controllers\Admin\Disbursements\DisbursementsController;
 use App\Http\Controllers\Admin\Estimates\EstimateController;
 use App\Http\Controllers\Admin\Facturascobradas\FacturacobradaController;
+use App\Http\Controllers\Admin\FacturasGeneradas\FacturasGeneradasController;
 use App\Http\Controllers\Admin\Facturaspacturas\FacturapagadaController;
 use App\Http\Controllers\Admin\Facturasxc\FacturaxcController;
 use Illuminate\Support\Facades\Route; 
@@ -65,5 +68,8 @@ Route::resource('controlobra', ControlObraController::class)->only(['index', 'cr
 //Centro de Costos
 Route::resource('constcenters', ConstCenterController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.cost-centers');
 
-//Centro de Costos
-Route::resource('constcenters', ConstCenterController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.cost-centers');
+//Facturas Generadas
+Route::resource('facturas-generadas', FacturasGeneradasController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.facturas-generadas');
+
+//Facturas Generadas
+Route::resource('details-obra', DetailObraController::class)->only(['index', 'create', 'edit', 'show', 'destroy'])->names('admin.details-obra');

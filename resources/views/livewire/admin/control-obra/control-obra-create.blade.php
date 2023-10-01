@@ -137,6 +137,15 @@
                                 <input type="date" id="fecha_de_registro" class="form-control" wire:model="fecha_de_registro" placeholder="Ingrese el periodo">
                                 @error('fecha_de_registro') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
+                            <div class="form-group col-12">
+                                <div wire:ignore>
+                                    <label class="col-form-label">
+                                        {{ __('Descripción') }}
+                                    </label>
+                                    <textarea class="form-control" wire:model="descripcion" id="descripcion" rows="3">{!! $descripcion !!}</textarea>
+                                </div>
+                                @error('descripcion') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
                             <div class="form-group col-12 col-md-6">
                                 <label class="col-form-label">
                                     {{ __('RFC') }}
@@ -156,12 +165,29 @@
                             </div>
                             <div class="form-group col-12 ">
                                 <label class="col-form-label">
+                                    {{ __('Retencion') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="subtotal" class="form-control" wire:model="subtotal" placeholder="Ingrese el subtotal ">
+                                @error('subtotal') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12 ">
+                                <label class="col-form-label">
+                                    {{ __('Devolucion ') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="subtotal" class="form-control" wire:model="subtotal" placeholder="Ingrese el subtotal ">
+                                @error('subtotal') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12 ">
+                                <label class="col-form-label">
                                     {{ __('SUBTOTAL') }}
                                     <span class="text-danger">*</span>
                                 </label>
                                 <input type="text" id="subtotal" class="form-control" wire:model="subtotal" placeholder="Ingrese el subtotal ">
                                 @error('subtotal') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
+
                             <div class="form-group col-12 col-md-6">
                                 <label class="col-form-label">
                                     {{ __('AMORTIZACIÓN DEL ANTICIPO') }}
@@ -178,9 +204,25 @@
                                 <input type="text" id="total_monto" class="form-control" wire:model="total_monto" placeholder="Ingrese su total del monto">
                                 @error('total_monto') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label class="col-form-label">
+                                    {{ __('DEDUCTIVA APILCABLE POR LA DEPENDENCIA 1') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="total_monto" class="form-control" wire:model="total_monto" placeholder="Ingrese su total del monto">
+                                @error('total_monto') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label class="col-form-label">
+                                    {{ __('DEDUCTIVA APILCABLE POR LA DEPENDENCIA 2') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="total_monto" class="form-control" wire:model="total_monto" placeholder="Ingrese su total del monto">
+                                @error('total_monto') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
                             <div class="form-group col-12 ">
                                 <label class="col-form-label">
-                                    {{ __('Total del Monto') }}
+                                    {{ __('Total Sin IVA') }}
                                     <span class="text-danger">*</span>
                                 </label>
                                 <input type="text" id="total_monto" class="form-control" wire:model="total_monto" placeholder="Ingrese su total del monto">
@@ -191,7 +233,7 @@
                 </div>
                 {{--Documentos--}}
                 <div class="row rounded border mb-4">
-                    <div class="bg-green rounded-left">
+                    <div class="bg-cyan rounded-left">
                         <div class="m-3">
                             <div class="my-auto"><i class="fa fa-upload"></i></div>
                         </div>
@@ -203,7 +245,7 @@
                         <div class="row">
                             <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
                                 <label class="col-form-label">
-                                    {{ __('Archivo de Estimación') }}
+                                    {{ __('Archivos de Estimación') }}
                                     {{-- <span class="text-danger">*</span> --}}
                                 </label>
                                 <input type="file" class="form-control-file" id="documento_de_estimacion" wire:model.defer="documento_de_estimacion">
@@ -222,3 +264,65 @@
         </div>
     </div>
 </div>
+
+
+@push('css')
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+
+    <style>
+    .select2 {
+        width:100%!important;
+    }
+    </style>
+@endpush
+
+
+@push('js')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <script>
+        $('#descripcion').summernote({
+            tabsize: 2,
+            height: 200,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+            ],
+            callbacks: {
+                onChange: function(contents, $editable) {
+                    @this.set('descripción', contents);
+                }
+            }
+        });
+
+        $(document).ready(function () {
+
+            $('#asreas').select2({
+                theme: 'bootstrap4'
+            });
+
+            $('#areas').on('change', function (e) {
+                var data = $('#areas').select2("val");
+            @this.set('area', data);
+            });
+
+            $(document).ready(function () {
+            $('#users-dropdown').select2({
+                theme: "classic"
+            });
+
+            $("#checkbox").click();
+                $('#users-dropdown').on('change', function (e) {
+                    let data = $(this).val();
+                    @this.set('afectados', data);
+                });
+            });
+        });
+    </script>
+@endpush

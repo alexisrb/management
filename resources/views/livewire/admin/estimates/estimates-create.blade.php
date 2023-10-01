@@ -49,9 +49,17 @@
                                 <input type="text" id="domicilio" class="form-control" wire:model="domicilio" placeholder="Ingrese el domicilio">
                                 @error('domicilio') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
-                            <div class="form-group col-12">
+                            <div class="form-group col-12 col-md-6">
                                 <label class="col-form-label">
                                     {{ __('Obra') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="obra" class="form-control" wire:model="obra" placeholder="Ingrese el nombre de la obra">
+                                @error('obra') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label class="col-form-label">
+                                    {{ __('Centro de Costo') }}
                                     <span class="text-danger">*</span>
                                 </label>
                                 <input type="text" id="obra" class="form-control" wire:model="obra" placeholder="Ingrese el nombre de la obra">
@@ -171,6 +179,7 @@
                                 <input type="text" id="cve_resupuestal" class="form-control" wire:model="cve_resupuestal" placeholder="Ingrese la clave Presupuestal">
                                 @error('cve_resupuestal') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -188,13 +197,20 @@
                         <div class="row">
                             <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
                                 <label class="col-form-label">
-                                    {{ __('Archivo de Estimación') }}
+                                    {{ __('Archivos de Estimacion Digital(Excel)') }}
                                     {{-- <span class="text-danger">*</span> --}}
                                 </label>
                                 <input type="file" class="form-control-file" id="documento_de_estimacion" wire:model.defer="documento_de_estimacion">
                                 @error('documento_de_estimacion') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
-                            
+                            <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
+                                <label class="col-form-label">
+                                    {{ __('Estimacion Firmada(PDF)') }}
+                                    {{-- <span class="text-danger">*</span> --}}
+                                </label>
+                                <input type="file" class="form-control-file" id="documento_de_estimacion" wire:model.defer="documento_de_estimacion">
+                                @error('documento_de_estimacion') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
                         </div>
                     </div>
                 </div>
