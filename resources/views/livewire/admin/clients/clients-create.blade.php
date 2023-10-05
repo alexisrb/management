@@ -175,7 +175,7 @@
                                     <input type="text" id="email_contacto" class="form-control" wire:model="email_contacto" placeholder="Ingrese el correo">
                                     @error('email_contacto') <span class="text-danger error">{{ $message }}</span>@enderror
                                 </div>
-                                <div class="form-group col-12">
+                                {{--<div class="form-group col-12">
                                     <label class="col-form-label">
                                         {{ __('Whatsapp') }}
                                     </label>
@@ -194,7 +194,7 @@
                                             @error('número_de_teléfono') <span class="text-danger error">{{ $message }}</span>@enderror
                                         </div>
                                     </div>
-                                </div>
+                                </div>--}}
                             </div>
                            
                             

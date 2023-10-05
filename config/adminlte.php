@@ -318,7 +318,19 @@ return [
         [
             'text' => 'Obra / Proyectos',
             'route'  => 'admin.obra.index',
-            'icon' => 'fas fa-fw fa-warehouse',
+            
+            'submenu' => [
+                [
+                    'text' => 'Obra / Proyectos',
+                    'route'  => 'admin.obra.index',
+                    'icon' => 'fas fa-fw fa-warehouse',
+                ],
+                [
+                    'text' => 'Detalles de la Obra',
+                    'route'  => 'admin.details-obra.index',
+                    'icon' => 'fa fa-info-circle',
+                ],
+            ],
         ],  
         [
             'text' => 'Usuarios',
@@ -372,25 +384,43 @@ return [
                     'icon' => 'fas fa-solid fa-money-bill',
                 ],
             ],
-        ],
-        
+        ], 
         [
             'text'       => 'Contabilidad',
             'icon' => 'fas fa-solid fa-key',
-            'route'        => 'admin.accounting.index',
+            'submenu' => [
+                [
+                    'text'       => 'Contabilidad',
+                    'icon' => 'fas fa-solid fa-key',
+                    'route'        => 'admin.accounting.index',
+                ],
+                [
+                    'text' => 'Facturas por Generar',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Facturas Generadas',
+                    'route'  => 'admin.facturas-generadas.index',
+                ],
+                
+                [
+                    'text' => 'Facturas Cobradas',
+                    'url'  => '#',
+                ],
+            ]
         ],
         [
             'text'    => 'Finanzas',
             'icon' => 'fa fa-credit-card',
             'submenu' => [
                 [
-                    'text' => 'Facturas por Cobrar',
+                    'text' => 'Facturas por Cobrar / Compromante de pago',
                     'route'  => 'admin.facturasxc.index',
                     'icon' => 'fa fa-credit-card',
                 ],
                 
                 [
-                    'text' => 'Facturas Pagadas',
+                    'text' => 'Facturas Pagadas / Complemento de pago',
                     'route'  => 'admin.facturas-cobradas.index',
                     'icon' => 'fa fa-credit-card',
                 ],
@@ -405,16 +435,27 @@ return [
                     'url'  => '#',
                     'submenu' => [
                         [
-                            'text' => 'Estimaciones Pendientes',
+                            'text' => 'Generar Caratula CO',
+                            'route'  => 'admin.control-obra.index',
+                            'icon' => 'fa fa-link',
+                        ],
+                        [
+                            'text' => 'Caratula de Estimaciones',
                             'url'  => '#',
                         ],
                     ]
                 ],
                 [
+                    'text' => 'Centros de Costos',
+                    'route'  => 'admin.cost-centers.index',
+                    'icon'  => 'fa fa-signal',
+                ],
+                [
                     'text' => 'Auto Estimación',
                     'url'  => '#',
-                    'icon'  => 'fa fa-folder-open'
+                    'icon'  => 'fa fa-folder-open',
                 ],
+                
                 [
                     'text'    => 'Facturación',
                     'url'     => '#',

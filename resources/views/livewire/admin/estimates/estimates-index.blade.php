@@ -38,9 +38,8 @@
                         <th>Nombre de la obra / Proyecto</th>
                         <th>Porcentaje de avances</th>
                         <th>Estimaciones</th>
-                        <th>Facturas Generadas</th>
-                        <th>Facturas Cobradas</th>
-                        <th>Porcentaje de Cobranza</th>    
+                        <th>Estatus</th>
+                        <th>Aprovacion</th>
                         @can('')
                             <th></th>
                         @endcan

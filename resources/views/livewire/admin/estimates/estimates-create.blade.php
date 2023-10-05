@@ -40,15 +40,8 @@
                                 <input type="text" id="número_de_empleado" class="form-control" wire:model="número_de_empleado" placeholder="Ingrese su numero de empleado">
                                 @error('número_de_empleado') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
+                            
                             <div class="form-group col-12 col-md-6">
-                                <label class="col-form-label">
-                                    {{ __('Numero de Estimación') }}
-                                    <span class="text-danger">*</span>
-                                </label>
-                                <input type="text" id="número_de_estimación" class="form-control" wire:model="número_de_estimación" placeholder="Ingrese su numero de empleado">
-                                @error('número_de_estimación') <span class="text-danger error">{{ $message }}</span>@enderror
-                            </div>
-                            <div class="form-group col-12">
                                 <label class="col-form-label">
                                     {{ __('Domicilio') }}
                                     <span class="text-danger">*</span>
@@ -56,7 +49,7 @@
                                 <input type="text" id="domicilio" class="form-control" wire:model="domicilio" placeholder="Ingrese el domicilio">
                                 @error('domicilio') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
-                            <div class="form-group col-12">
+                            <div class="form-group col-12 col-md-6">
                                 <label class="col-form-label">
                                     {{ __('Obra') }}
                                     <span class="text-danger">*</span>
@@ -66,19 +59,14 @@
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label class="col-form-label">
-                                    {{ __('Fecha de registro') }}
-                                </label>
-                                <input type="date" id="fecha_de_registro" class="form-control" wire:model="fecha_de_registro" placeholder="Ingrese la fecha">
-                                @error('fecha_de_registro') <span class="text-danger error">{{ $message }}</span>@enderror
-                            </div>
-                            <div class="form-group col-12">
-                                <label class="col-form-label">
-                                    {{ __('Nombre de la estimación') }}
+                                    {{ __('Centro de Costo') }}
                                     <span class="text-danger">*</span>
                                 </label>
-                                <input type="text" id="estimates" class="form-control" wire:model="estimates" placeholder="Ingrese el nombre">
-                                @error('estimates') <span class="text-danger error">{{ $message }}</span>@enderror
+                                <input type="text" id="obra" class="form-control" wire:model="obra" placeholder="Ingrese el nombre de la obra">
+                                @error('obra') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
+                            
+                            
                             
                             {{--<div class="form-group col-12">
                                 <label class="col-form-label">
@@ -133,9 +121,71 @@
                         </div>
                     </div>
                 </div>
+                {{--Resumen de Estimacion --}}
+                <div class="row rounded border mb-4">
+                    <div class="bg-yellow rounded-left">
+                        <div class="m-3">
+                            <div class="my-auto"><i class="fa fa-user-plus"></i></div>
+                        </div>
+                    </div>
+                    <div class="col m-2">
+                        <div class="border-bottom">
+                            <h5 class="py-1 text-center">Resumen de Estimaciones</h5>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-12 col-md-6">
+                                <label class="col-form-label">
+                                    {{ __('Folio de la Estimación') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="número_de_estimación" class="form-control" wire:model="número_de_estimación" placeholder="Ingrese su numero de empleado">
+                                @error('número_de_estimación') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label class="col-form-label">
+                                    {{ __('Contrato') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="contrato" class="form-control" wire:model="contrato" placeholder="Ingrese el Objeto del Contrato">
+                                @error('contrato') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label class="col-form-label">
+                                    {{ __('Cliente') }}
+                                </label>
+                                <input type="text" id="cliente" class="form-control" wire:model="cliente" placeholder="Ingrese el nombre de la empresa">
+                                @error('cliente') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label class="col-form-label">
+                                    {{ __('Periodo del registro') }}
+                                </label>
+                                <input type="date" id="fecha_de_registro" class="form-control" wire:model="fecha_de_registro" placeholder="Ingrese el periodo">
+                                @error('fecha_de_registro') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12 ">
+                                <label class="col-form-label">
+                                    {{ __('Tipo de Fondos') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="tipo_fondos" class="form-control" wire:model="tipo_fondos" placeholder="Ingrese el tipo de fondo">
+                                @error('tipo_fondos') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group col-12">
+                                <label class="col-form-label">
+                                    {{ __('Clave Presupuestal') }}
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="cve_resupuestal" class="form-control" wire:model="cve_resupuestal" placeholder="Ingrese la clave Presupuestal">
+                                @error('cve_resupuestal') <span class="text-danger error">{{ $message }}</span>@enderror
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
                 {{--Documentos--}}
                 <div class="row rounded border mb-4">
-                    <div class="bg-gray rounded-left">
+                    <div class="bg-orange rounded-left">
                         <div class="m-3">
                             <div class="my-auto"><i class="fa fa-file"></i></div>
                         </div>
@@ -147,27 +197,19 @@
                         <div class="row">
                             <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
                                 <label class="col-form-label">
-                                    {{ __('Plantilla de datos Generales') }}
+                                    {{ __('Archivos de Estimacion Digital(Excel)') }}
                                     {{-- <span class="text-danger">*</span> --}}
                                 </label>
-                                <input type="file" class="form-control-file" id="documento_de_identificación_oficial" wire:model.defer="documento_de_identificación_oficial">
-                                @error('documento_de_identificación_oficial') <span class="text-danger error">{{ $message }}</span>@enderror
+                                <input type="file" class="form-control-file" id="documento_de_estimacion" wire:model.defer="documento_de_estimacion">
+                                @error('documento_de_estimacion') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
                             <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
                                 <label class="col-form-label">
-                                    {{ __('Catalogo de conceptos') }}
+                                    {{ __('Estimacion Firmada(PDF)') }}
                                     {{-- <span class="text-danger">*</span> --}}
                                 </label>
-                                <input type="file" class="form-control-file" id="documento_del_comprobante_de_domicilio" wire:model.defer="documento_del_comprobante_de_domicilio">
-                                @error('documento_del_comprobante_de_domicilio') <span class="text-danger error">{{ $message }}</span>@enderror
-                            </div>
-                            <div class="form-group col-12 col-sm-6 col-md-4 col-xl-4">
-                                <label class="col-form-label">
-                                    {{ __('Hoja de Control de Estimaciones') }}
-                                    {{-- <span class="text-danger">*</span> --}}
-                                </label>
-                                <input type="file" class="form-control-file" id="documento_del_requisicion_firmada" wire:model.defer="documento_del_requisicion_firmada">
-                                @error('documento_del_requisicion_firmada') <span class="text-danger error">{{ $message }}</span>@enderror
+                                <input type="file" class="form-control-file" id="documento_de_estimacion" wire:model.defer="documento_de_estimacion">
+                                @error('documento_de_estimacion') <span class="text-danger error">{{ $message }}</span>@enderror
                             </div>
                         </div>
                     </div>
